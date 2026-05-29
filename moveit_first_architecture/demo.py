@@ -42,8 +42,9 @@ def main():
         #
         # Load collision scene
         #
+        '''
         robot.scene.load_yaml("scene.yaml")
-
+        '''
         #
         # Small pause so planning scene updates propagate
         #
