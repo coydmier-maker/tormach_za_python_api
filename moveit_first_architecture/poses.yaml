@@ -4,7 +4,12 @@ poses:
     type: joints
     values: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
+  demo:
+    type: pose
+    position: [-0.28, -0.25, 0.68]
+    orientation: [0, -0.5, 0.82, 0.0]
+
   meltio:
     type: pose
-    position: [-0.42, 0.52, 0.95]
-    orientation: [0, 0, 0, 1]
+    position: [-0.51, 0.44, 0.70]
+    orientation: [0.0, -0.5, 0.82, 0.0]

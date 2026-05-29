@@ -52,6 +52,10 @@ def main():
         #
         # Example pose motion
         #
+        robot.move_to_named_pose("demo")
+
+        time.sleep(2.0)
+
         robot.move_to_named_pose("meltio")
 
         #
