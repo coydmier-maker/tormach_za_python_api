@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import rclpy
+from rclpy.executors import SingleThreadedExecutor
 
 from za6_robot import ZA6Robot
 
@@ -11,35 +12,62 @@ def main():
 
     robot = ZA6Robot()
 
-    #
-    # Move robot
-    #
+    executor = SingleThreadedExecutor()
+    executor.add_node(robot)
 
-    robot.home()
+    try:
+        #
+        # Run spin in background execution loop
+        #
+        import threading
 
-    #
-    # Add collision objects
-    #
+        spin_thread = threading.Thread(
+            target=executor.spin,
+            daemon=True
+        )
+        spin_thread.start()
 
-    robot.scene.load_yaml("scene.yaml")
+        #
+        # Give ROS time to initialize
+        #
+        robot.get_logger().info("Waiting for system to stabilize...")
+        rclpy.sleep(1.0)
 
-    #
-    # Example pose move
-    #
+        #
+        # Move robot to home
+        #
+        robot.home()
 
-    robot.move_pose(
-        position=[0.7, -0.5, 0.5],
+        #
+        # Load collision scene
+        #
+        robot.scene.load_yaml("scene.yaml")
 
-        quat_xyzw=[0.545, 0, 0.839, 0],
-    )
+        #
+        # Small pause so planning scene updates propagate
+        #
+        rclpy.sleep(1.0)
 
-    #
-    # Shutdown
-    #
+        #
+        # Example pose motion
+        #
+        robot.move_pose(
+            position=[0.7, -0.5, 0.5],
+            quat_xyzw=[0.545, 0.0, 0.839, 0.0],
+        )
 
-    robot.shutdown()
+        #
+        # Wait for completion
+        #
+        rclpy.sleep(2.0)
 
-    rclpy.shutdown()
+    finally:
+
+        robot.shutdown()
+
+        executor.shutdown()
+
+        rclpy.shutdown()
 
 
 if __name__ == "__main__":
