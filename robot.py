@@ -20,21 +20,14 @@ class RobotAPI(Node):
 
         self.current_joint_state = None
 
-        self.joint_names = [
-            'joint_1',
-            'joint_2',
-            'joint_3',
-            'joint_4',
-            'joint_5',
-            'joint_6'
-        ]
-
         self.joint_state_sub = self.create_subscription(
             JointState,
             '/joint_states',
             self.joint_state_callback,
             10
         )
+
+        self.wait_for_joint_state()
 
         self.trajectory_client = ActionClient(
             self,
@@ -48,14 +41,33 @@ class RobotAPI(Node):
 
     def wait_for_joint_state(self):
 
+        self.get_logger().info('Waiting for joint states...')
+
         while rclpy.ok() and self.current_joint_state is None:
             rclpy.spin_once(self)
+
+        self.joint_names = list(self.current_joint_state.name)
+
+        self.get_logger().info(
+            f'Joint names discovered: {self.joint_names}'
+        )
 
     def get_joint_positions(self):
 
         self.wait_for_joint_state()
 
         return list(self.current_joint_state.position)
+    
+    def get_joint_dict(self):
+
+        self.wait_for_joint_state()
+
+        return dict(
+            zip(
+                self.current_joint_state.name,
+                self.current_joint_state.position
+            )
+        )
 
     def move_joints(self, positions, duration=3.0):
 
@@ -102,10 +114,26 @@ class RobotAPI(Node):
 
         self.get_logger().info('Trajectory complete')
 
-    def offset_joint(self, joint_index, delta):
+    def offset_joint(self, joint_name, delta):
 
-        current = self.get_joint_positions()
+        state = self.get_joint_dict()
 
-        current[joint_index] += delta
+        state[joint_name] += delta
 
-        self.move_joints(current)
+        target_positions = [
+            state[name]
+            for name in self.joint_names
+        ]
+
+        self.move_joints(target_positions)
+
+    def print_joint_positions(self):
+
+        state = self.get_joint_dict()
+
+        self.get_logger().info('Current Joint Positions:')
+
+        for name, pos in state.items():
+            self.get_logger().info(
+                f'  {name}: {pos:.3f}'
+            )
