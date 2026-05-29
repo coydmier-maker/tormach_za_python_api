@@ -17,4 +17,4 @@ poses:
   inspection:
     type: pose
     position: [0.29, -0.16, 0.25]
-    orientation: [0.0, 0.0, 1.0, 0.0]
+    orientation: [0.0, 0.0, 0.0, 1.0]
