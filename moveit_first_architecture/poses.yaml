@@ -5,6 +5,6 @@ poses:
     values: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
   meltio:
-  type: pose
-  position: [-0.53, 0.56, 0.95]
-  orientation: [0, 0, 0, 1]
+    type: pose
+    position: [-0.53, 0.56, 0.95]
+    orientation: [0, 0, 0, 1]
