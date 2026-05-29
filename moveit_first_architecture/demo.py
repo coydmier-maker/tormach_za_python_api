@@ -42,9 +42,9 @@ def main():
         #
         # Load collision scene
         #
-        '''
+        
         robot.scene.load_yaml("scene.yaml")
-        '''
+        
         #
         # Small pause so planning scene updates propagate
         #
@@ -57,7 +57,7 @@ def main():
 
         time.sleep(2.0)
 
-        robot.move_to_named_pose("demo")
+        robot.move_to_named_pose("inspection")
 
         #
         # Wait for completion
