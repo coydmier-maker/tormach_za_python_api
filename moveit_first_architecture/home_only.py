@@ -1,22 +1,12 @@
-#!/usr/bin/env python3
-
-import rclpy
-
-from za6_robot import ZA6Robot
-
-
 def main():
-
     rclpy.init()
 
     robot = ZA6Robot()
 
-    #
-    # Move robot
-    #
-
     robot.home()
-    
+
+    rclpy.spin(robot)
+
     robot.shutdown()
 
     rclpy.shutdown()
