@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import time
 import rclpy
 from rclpy.executors import SingleThreadedExecutor
 
@@ -31,7 +32,7 @@ def main():
         # Give ROS time to initialize
         #
         robot.get_logger().info("Waiting for system to stabilize...")
-        rclpy.sleep(1.0)
+        time.sleep(1.0)
 
         #
         # Move robot to home
@@ -46,7 +47,7 @@ def main():
         #
         # Small pause so planning scene updates propagate
         #
-        rclpy.sleep(1.0)
+        time.sleep(1.0)
 
         #
         # Example pose motion
@@ -59,7 +60,7 @@ def main():
         #
         # Wait for completion
         #
-        rclpy.sleep(2.0)
+        time.sleep(2.0)
 
     finally:
 
