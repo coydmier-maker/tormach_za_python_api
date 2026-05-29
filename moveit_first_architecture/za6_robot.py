@@ -9,6 +9,8 @@ from tf_transformations import quaternion_from_euler
 
 from scene_manager import SceneManager
 
+import yaml
+
 
 class ZA6Robot(Node):
 
@@ -32,6 +34,9 @@ class ZA6Robot(Node):
         self.base_link_name = "base_link"
         self.end_effector_name = "tool0"
         self.group_name = "manipulator"
+        self.poses = yaml.safe_load(
+            open("poses.yaml", "r")
+        )
 
         # -------------------------
         # MoveIt interface
@@ -131,6 +136,33 @@ class ZA6Robot(Node):
         )
 
         self.move_joints(joint_positions)
+
+    def move_to_named_pose(self, name):
+
+        if name not in self.poses:
+            raise ValueError(f"Unknown pose: {name}")
+
+        pose = self.poses[name]
+
+        pose_type = pose["type"]
+
+        if pose_type == "joints":
+
+            self.get_logger().info(f"[POSE] Joint-space: {name}")
+
+            self.move_joints(pose["values"])
+
+        elif pose_type == "pose":
+
+            self.get_logger().info(f"[POSE] Cartesian: {name}")
+
+            self.move_pose(
+                position=pose["position"],
+                quat_xyzw=pose["orientation"],
+            )
+
+        else:
+            raise ValueError(f"Unknown pose type: {pose_type}")
 
     # -------------------------
     # Cleanup

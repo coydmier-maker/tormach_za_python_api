@@ -12,10 +12,22 @@ boxes:
       y: 0.762
       z: 0.1
 
+  - name: wall
+
+    position:
+      x: 0.42
+      y: -0.44 
+      z: 0.6
+
+    size:
+      x: 2
+      y: 0.1
+      z: 2
+
   - name: meltio
 
     position:
-      x: -0.75
+      x: -0.65
       y: 0.0
       z: 0.75
 

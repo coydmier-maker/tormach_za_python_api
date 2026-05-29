@@ -52,10 +52,7 @@ def main():
         #
         # Example pose motion
         #
-        robot.move_pose(
-            position=[0.7, -0.5, 0.5],
-            quat_xyzw=[0.545, 0.0, 0.839, 0.0],
-        )
+        robot.move_to_named_pose("meltio")
 
         #
         # Wait for completion
