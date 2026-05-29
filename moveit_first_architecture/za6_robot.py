@@ -36,7 +36,7 @@ class ZA6Robot(Node):
         self.group_name = "manipulator"
         self.poses = yaml.safe_load(
             open("poses.yaml", "r")
-        )
+        )["poses"]
 
         # -------------------------
         # MoveIt interface
