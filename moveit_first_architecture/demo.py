@@ -57,7 +57,7 @@ def main():
 
         time.sleep(2.0)
 
-        robot.move_to_named_pose("inspection")
+        robot.move_to_named_pose("meltio")
 
         #
         # Wait for completion
