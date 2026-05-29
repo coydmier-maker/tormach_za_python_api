@@ -66,7 +66,7 @@ class ZA6Robot(Node):
         self._executor.add_node(self)
 
         self._executor_thread = Thread(
-            target=self.executor.spin,
+            target=self._executor.spin,
             daemon=True,
         )
 
