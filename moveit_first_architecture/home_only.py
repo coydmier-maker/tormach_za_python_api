@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+
+import rclpy
+
+from za6_robot import ZA6Robot
+
 def main():
     rclpy.init()
 
