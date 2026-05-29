@@ -117,14 +117,20 @@ class ZA6Robot(Node):
 
     def home(self):
 
-        self.move_joints([
+        joint_positions = [
             0.0,
             -1.57,
             1.57,
             0.0,
             0.0,
             0.0,
-        ])
+        ]
+
+        self.get_logger().info(
+            f"HOME COMMAND: {joint_positions}"
+        )
+
+        self.move_joints(joint_positions)
 
     # -------------------------
     # Cleanup
