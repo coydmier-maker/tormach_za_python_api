@@ -6,5 +6,5 @@ poses:
 
   meltio:
     type: pose
-    position: [-0.53, 0.56, 0.95]
+    position: [-0.42, 0.52, 0.95]
     orientation: [0, 0, 0, 1]
