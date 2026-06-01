@@ -117,6 +117,15 @@ class ZA6Robot(Node):
         )
 
     # -------------------------
+    # Change speed
+    # -------------------------
+
+    def set_speed(self, scale):
+
+        self.moveit2.max_velocity = scale
+        self.moveit2.max_acceleration = scale
+
+    # -------------------------
     # Convenience motions
     # -------------------------
 
