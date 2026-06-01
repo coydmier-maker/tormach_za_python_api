@@ -54,7 +54,7 @@ def main():
         # Example pose motion
         #
 
-        robot.set_speed(0.1)
+        robot.set_speed(0.025)
         robot.move_to_named_pose("tall")
 
         time.sleep(2.0)
