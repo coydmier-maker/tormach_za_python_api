@@ -88,7 +88,7 @@ class ZA6Robot(Node):
 
         self.moveit2.wait_until_executed()
 
-'''
+    '''
     def move_pose_xyz_rpy(
         self,
         x,
@@ -114,7 +114,7 @@ class ZA6Robot(Node):
                 quat[3],
             ],
         )
-'''
+    '''
 
     # -------------------------
     # Change speed
