@@ -5,8 +5,6 @@ from rclpy.node import Node
 
 from pymoveit2 import MoveIt2
 
-from tf_transformations import quaternion_from_euler
-
 from scene_manager import SceneManager
 
 import yaml
@@ -90,6 +88,7 @@ class ZA6Robot(Node):
 
         self.moveit2.wait_until_executed()
 
+'''
     def move_pose_xyz_rpy(
         self,
         x,
@@ -115,6 +114,7 @@ class ZA6Robot(Node):
                 quat[3],
             ],
         )
+'''
 
     # -------------------------
     # Change speed
