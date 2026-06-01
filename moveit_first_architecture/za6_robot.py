@@ -7,6 +7,8 @@ from pymoveit2 import MoveIt2
 
 from scene_manager import SceneManager
 
+import poses.yaml
+
 import yaml
 
 
