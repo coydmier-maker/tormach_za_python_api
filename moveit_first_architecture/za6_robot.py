@@ -9,6 +9,7 @@ from scene_manager import SceneManager
 
 import yaml
 
+from pathlib import Path
 
 class ZA6Robot(Node):
 
@@ -32,9 +33,13 @@ class ZA6Robot(Node):
         self.base_link_name = "base_link"
         self.end_effector_name = "tool0"
         self.group_name = "manipulator"
-        self.poses = yaml.safe_load(
-            open("poses.yaml", "r")
-        )["poses"]
+        
+        # Load poses.yaml relative to this source file
+
+        poses_path = Path(__file__).parent / "poses.yaml"
+
+        with open(poses_path, "r") as f:
+            self.poses = yaml.safe_load(f)["poses"]
 
         # -------------------------
         # MoveIt interface
