@@ -7,7 +7,7 @@ poses:
   demo:
     type: pose
     position: [-0.32, -0.26, 1.07]
-    orientation: [0, -0.5, 0.26, 0.083]
+    orientation: [0.0, -0.5, 0.26, 0.083]
 
   meltio:
     type: pose
@@ -23,3 +23,8 @@ poses:
     type: pose
     position: [-0.14, -0.20, 1.18]
     orientation: [-0.43, 0.73, -0.50, -0.19]
+
+  aLittleOffTheTop:
+    type: pose
+    position: [-0.47, 0, 0.72]
+    orientation: [0.68, -0.5, 0.49, -0.21]
