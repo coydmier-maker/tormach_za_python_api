@@ -40,7 +40,7 @@ def main():
         time.sleep(2.0)
 
         robot.set_speed(0.025)
-        robot.move_to_named_pose("tall")
+        robot.move_to_named_pose("uppies")
         time.sleep(2.0)
         robot.move_to_named_pose("home")
 

@@ -4,6 +4,10 @@ poses:
     type: joints
     values: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
+  uppies:
+    type: joints
+    values: [0.0, 0.0, 0.3, 0.0, 0.0, 0.0]
+
   demo:
     type: pose
     position: [-0.32, -0.26, 1.07]
