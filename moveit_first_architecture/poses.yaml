@@ -37,3 +37,8 @@ poses:
     type: pose
     position: [0.99, 0.0, 0.50]
     orientation: [0.77, -0.22, 0.60, -0.06]
+
+  bentOver:
+    type: pose
+    position: [0.84, 0.17, 0.54]
+    orientation: [0.76, 0.41, 0.48, 0.15]
