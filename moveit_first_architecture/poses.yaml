@@ -35,5 +35,5 @@ poses:
 
   plankPosition:
     type: pose
-    position: [1.0, 0.0, 0.50]
-    orientation: [0.77, -0.23, 0.60, -0.01]
+    position: [0.99, 0.0, 0.50]
+    orientation: [0.77, -0.22, 0.60, -0.06]
