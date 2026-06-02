@@ -6,7 +6,7 @@ poses:
 
   uppies:
     type: joints
-    values: [0.0, 0.0, 0.3, 0.0, 0.0, 0.0]
+    values: [0.0, 0.0, 0.0, 0.3, 0.0, 0.0]
 
   demo:
     type: pose
