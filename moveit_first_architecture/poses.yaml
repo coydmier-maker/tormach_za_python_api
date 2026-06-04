@@ -56,3 +56,7 @@ poses:
   pickUpJoints:
     type: joints
     values: [0.022, 1.476, 0.525, 0.039, -0.056, -1.365]
+
+  preparingJoints:
+    type: joints
+    values: [-0.008, 1.448, 0.443, 0.526, -0.088, -1.813]
