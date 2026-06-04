@@ -34,7 +34,6 @@ def main():
         robot.get_logger().info("Waiting for system to stabilize...")
         time.sleep(1.0)
 
-
         robot.scene.load_yaml("scene.yaml")
         
         time.sleep(2.0)
