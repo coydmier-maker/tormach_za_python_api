@@ -8,10 +8,10 @@ class Gripper:
 
     def open(self):
         msg = Bool()
-        msg.data = True
+        msg.data = False
         self.pub.publish(msg)
 
     def close(self):
         msg = Bool()
-        msg.data = False
+        msg.data = True
         self.pub.publish(msg)
