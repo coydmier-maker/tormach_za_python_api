@@ -47,7 +47,7 @@ def main():
         time.sleep(1.0)
         robot.gripper.close()
         time.sleep(1.0)
-        robot.move_to_named_pose("youRaisedMeUp")
+        robot.move_to_named_pose("youRaiseMeUp")
         time.sleep(1.0)
         robot.move_to_named_pose("pickUpJoints")
         time.sleep(1.0)
