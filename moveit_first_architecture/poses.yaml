@@ -60,3 +60,7 @@ poses:
   preparingJoints:
     type: joints
     values: [-0.008, 1.448, 0.443, 0.526, -0.088, -1.813]
+
+  youRaiseMeUp:
+    type: joints
+    values: [0.007, 0.552, 0.591, 0.322, 0.106, 0.727]
