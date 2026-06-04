@@ -44,14 +44,11 @@ poses:
     orientation: [0.76, 0.41, 0.48, 0.15]
 
   pickUp:
-    type: joints
-    values: [0.0, 1.50, 0.02, 0.0, -1.36, 0.56]
+    type: pose
+    position: [0.65058, 0.021823, 0.058298]
+    orientation: [0.73935, -0.16663, 0.62321, -0.19287]
 
   preparing:
-    type: joints
-    values: [0.0, 1.50, 0.35, 0.0, -1.64, 0.56]
-
-  preparing2:
     type: pose
-    position: [0.54776, -0.061688, 0.17556]
-    orientation: [0.72977, -0.2103, 0.62511, -0.1801]
+    position: [0.65058, 0.021823, 0.058298]
+    orientation: [0.73935, -0.16663, 0.62321, -0.19287]
