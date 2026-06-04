@@ -52,3 +52,7 @@ poses:
     type: pose
     position: [0.43691, 0.0055115, 0.090739]
     orientation: [0.73955, -0.16664, 0.6231, -0.19246]
+
+  pickUpJoints:
+    type: joints
+    values: [0.0224, 1.476, 0.0399, -0.0559, -1.365, 0.525]
