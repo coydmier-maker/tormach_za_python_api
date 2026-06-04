@@ -11,6 +11,8 @@ import yaml
 
 from pathlib import Path
 
+from .gripper import Gripper
+
 class ZA6Robot(Node):
 
     def __init__(self):
@@ -33,6 +35,8 @@ class ZA6Robot(Node):
         self.base_link_name = "base_link"
         self.end_effector_name = "tool0"
         self.group_name = "manipulator"
+
+        self.gripper = Gripper(self)
         
         # Load poses.yaml relative to this source file
 
