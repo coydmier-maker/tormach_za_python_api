@@ -11,7 +11,7 @@ import yaml
 
 from pathlib import Path
 
-from gripper.py import Gripper
+from gripper import Gripper
 
 class ZA6Robot(Node):
 
