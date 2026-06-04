@@ -51,4 +51,4 @@ poses:
   preparing:
     type: pose
     position: [0.4328, 0.016164, 0.099962]
-    orientation: [0.74091, -0.18218, 0.62663, -0.15876]
+    orientation: [0.73935, -0.16663, 0.62321, -0.19287]
