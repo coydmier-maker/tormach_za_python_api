@@ -84,7 +84,7 @@ class ZA6Robot(Node):
     # Pose-space motion
     # -------------------------
 
-    def move_pose(self, position, quat_xyzw):
+    def move_pose(self, position, quat_xyzw, cartesian=False):
 
         self.get_logger().info(
             f"Moving to pose: {position}"
@@ -93,6 +93,7 @@ class ZA6Robot(Node):
         self.moveit2.move_to_pose(
             position=position,
             quat_xyzw=quat_xyzw,
+            cartesian=cartesian,
         )
 
         self.moveit2.wait_until_executed()
@@ -155,7 +156,7 @@ class ZA6Robot(Node):
 
         self.move_joints(joint_positions)
 
-    def move_to_named_pose(self, name):
+    def move_to_named_pose(self, name, cartesian=False):
 
         if name not in self.poses:
             raise ValueError(f"Unknown pose: {name}")
@@ -177,6 +178,7 @@ class ZA6Robot(Node):
             self.move_pose(
                 position=pose["position"],
                 quat_xyzw=pose["orientation"],
+                cartesian=cartesian
             )
 
         else:
